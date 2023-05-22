@@ -16,8 +16,10 @@ public class StatBar : MonoBehaviour
     {
         _value = _target = value;
         _max = maxValue;
-        _bar.fillAmount = value / maxValue;
+        _bar.fillAmount = _value / maxValue;
         _dirty = false;
+
+        _text.text = Mathf.FloorToInt(_value).ToString(CultureInfo.InvariantCulture);
     }
 
     public void Target(int target)
